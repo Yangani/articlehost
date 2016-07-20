@@ -1,6 +1,9 @@
-var express =  require('express');
-var router = express.Router();
-var db = require("./db")
+var express    = require('express');
+var router     = express.Router();
+var connection = require('./connection');
+var articles   = require('./models');
+
+// connection.init();
 
 //Databases
 var database = {
@@ -14,7 +17,7 @@ var database = {
 /*
 //Add article    - addarticle  = POST
 router.get('/articles', function(req, res) {
-
+	article.get(res);
 });
 
 
@@ -40,7 +43,6 @@ router.get('/bookmarks', function(req, res){
 	res.send(database);
 });
 
-router.delete
 //POST for New URLS
 router.post('/addbookmark', function(req, res) {
 	req.on("data", function(data_) {
