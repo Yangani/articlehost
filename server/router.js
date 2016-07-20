@@ -11,13 +11,36 @@ var database = {
 	"https://www.yahoo.com": "Yahoo",
 	"http://www.bloomberg.com" : "Bloomberg"
 }
+/*
+//Add article    - addarticle  = POST
+router.get('/articles', function(req, res) {
+
+});
+
+
+// Fetch articles: GET
+router.post('/addarticle', function(req, res) {
+
+});
+
+// Edit article: PUT
+router.put('/editarticle', function(req, res) {
+
+});
+
+//Delete article: DELETE
+router.delete('/delarticle', function(req, res) {
+
+});
+
+*/
 
 //SEND URLS to the app
 router.get('/bookmarks', function(req, res){
 	res.send(database);
 });
 
-
+router.delete
 //POST for New URLS
 router.post('/addbookmark', function(req, res) {
 	req.on("data", function(data_) {
