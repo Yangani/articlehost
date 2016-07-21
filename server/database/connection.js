@@ -15,9 +15,9 @@ function Connection() {
     this.pool = mysql.createPool({
       connectionLimit: 10,
       host: 'localhost',
-      user: 'YOUR MySQL USERNAME',
+      user: 'MySQL USERNAME',
       password: 'PASSWORD',
-      database: 'CREATED-DB'
+      database: 'DataBase NAME'
     });
   };
 
