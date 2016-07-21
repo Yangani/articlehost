@@ -33,7 +33,7 @@ textarea {
 	position: float;
 	margin: 5px auto;
 	width: 760px;
-	height: 150px;
+	height: 100px;
 }
 
 .submit {
@@ -55,14 +55,15 @@ textarea {
 	vertical-align: middle;
 }
 
-.divTable{
+.divArticles {
 	display: table;
 	width: 56%;
 	margin: 0 auto;
 	border-bottom: 1px solid #ddd;
 }
 
-.divTableHeading {
+.section-title {
+	width: 56%;
 	font-size: 18px;
 	background: #395870;
  	color: #fff;

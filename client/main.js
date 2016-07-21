@@ -23,10 +23,10 @@ function displayArticles(articles) {
 
 //Render Individual article Template
 function renderArticlesTemplate(title, body) {
-	var deleteButton = '<div class="divTableCell divDelete"><button type="button" class="delete" id="delete" value="' + title + '"onclick="deleteArticle(this.value)">Delete</button></div>';
+	var deleteButton = '<button type="button" class="delete" id="delete" value="' + title + '"onclick="deleteArticle(this.value)">Delete</button>';
 
 	var renderdiv = document.getElementById("articlelist");
-	renderdiv.innerHTML = renderdiv.innerHTML + '<div class="divTableRow" id="' + title + '"><div class="divTableCell">' + title + '</div><div class="divTableCell">' + body + '</div>' + deleteButton + '</div>';
+	renderdiv.innerHTML = renderdiv.innerHTML + '<div class="article" id="' + title + '"><h3 class="title">' + title + '</h3><p class="paragraph-body">' + body + '</p>' + deleteButton + '</div></div>';
 }
 
 //Add new article to the DB
@@ -75,10 +75,9 @@ function addArticle() {
 
 
 //Delete Article
-function deleteArticle(article) {
+function deleteArticle(title) {
 	//Delete the article
-	document.getElementById(article).remove();
-	
+	document.getElementById(title).remove();
 	//Remove Aricle from the database
 	xhr = new XMLHttpRequest();
 	xhr.open('DELETE', encodeURI('api/deletearticle'));
@@ -90,23 +89,21 @@ function deleteArticle(article) {
 			alert('Request failed ' + xhr.status);
 		}
 	};
-	xhr.send(JSON.stringify(article));
+	xhr.send(JSON.stringify(title));
 }
 
-function editArticle(article) {
-	//Delete the article
-	document.getElementById(article).remove();
+function editArticle(title) {
 	
-	//Remove article from the database
+	//Edit article from the database
 	xhr = new XMLHttpRequest();
 	xhr.open('PUT', encodeURI('api/editarticle'));
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	xhr.onload = function() {
 		if (xhr.status === 200) {
-			console.log("Delete Successful");
+			console.log("Edit Successful");
 		} else if (xhr.status !== 200) {
 			alert('Request failed ' + xhr.status);
 		}
 	};
-	xhr.send(JSON.stringify(article));
+	xhr.send(JSON.stringify(title));
 }
