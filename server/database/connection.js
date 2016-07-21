@@ -17,7 +17,7 @@ function Connection() {
       host: 'localhost',
       user: 'root',
       password: '254Kenya',
-      database: 'bookmarks'
+      database: 'articles'
     });
   };
 
