@@ -1,9 +1,10 @@
 var express    = require('express');
 var router     = express.Router();
 var connection = require('./connection');
-var articles   = require('./models');
+var bookmarks  = require('./models');
 
-// connection.init();
+//Initialize connection to MySQL DB
+connection.init();
 
 //Databases
 var database = {
@@ -17,7 +18,7 @@ var database = {
 /*
 //Add article    - addarticle  = POST
 router.get('/articles', function(req, res) {
-	article.get(res);
+	articles.get(res);
 });
 
 
@@ -40,21 +41,15 @@ router.delete('/delarticle', function(req, res) {
 
 //SEND URLS to the app
 router.get('/bookmarks', function(req, res){
-	res.send(database);
+	bookmarks.get(res);
 });
 
 //POST for New URLS
 router.post('/addbookmark', function(req, res) {
 	req.on("data", function(data_) {
 		data_ = JSON.parse(data_);
-		if(database[data_.url]) {       //Check if value if exist in database
-			res.send("Exist");
-		}
-		else {
-			database[data_.url] = data_.title;
-			res.send("Successful");
-		}
-      });
+		bookmarks.add(data_, res);
+     });
 })
 
 //Delete URL 
