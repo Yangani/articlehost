@@ -13,32 +13,33 @@ h1 {
 }
 
 .addarticle {
-	position: float;
-	margin: 30px auto; 
-	text-align: center;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 56%;
+	margin: 5px auto; 
 	padding:2px 6px;
 }
 
 .textbox {
-	position: float;
-	width: 241px;
+	width: 441px;
 	height: 25px;
-	margin-right: 10px;
 	font-size: 14px;
-	padding-left: 10px;
+	padding-left: 2px 6px;
 }
 
 
 textarea {
 	position: float;
-	margin: 30px auto; 
-	width: 50%;
-	height: 200px;
+	margin: 5px auto;
+	width: 760px;
+	height: 150px;
 }
 
 .submit {
-	width: 200px;
-	height: 50px;
+	width: 100px;
+	height: 30px;
+	margin: 10px auto;
 	-webkit-box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
 	-moz-box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
 	box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
@@ -71,6 +72,7 @@ textarea {
 
 .divTableBody {
 	display: table-row-group;
+	max-width: 700px;
 }
 
 .divTableRow:nth-child(even) {
@@ -86,6 +88,7 @@ textarea {
 	border: none;
 	display: table-cell;
 	padding: 5px 10px;
+	max-width: 400px;
 }
 
 .delete {
